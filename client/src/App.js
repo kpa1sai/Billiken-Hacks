@@ -4,13 +4,33 @@ import Categories from './Categories';
 import logo from './logo.png'; // Ensure the logo image is available in the src folder
 
 const App = () => {
+    return (
+        <div>
+            <Header />
+            <Routes>
+                <Route path="/" element={<MainContent />} />
+                <Route path="/categories" element={<Categories />} />
+            </Routes>
+        </div>
+    );
+}
+
+const Header = () => {
+    return (
+        <header>
+            
+        </header>
+    );
+};
+
+const MainContent = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const zipcode = document.getElementById('zipcode').value;
         console.log(`Submitted ZIP code: ${zipcode}`);
-        navigate('./categories'); // Navigate to categories page on form submit
+        navigate('/categories'); // Navigate to categories page on form submit
     };
 
     return (
