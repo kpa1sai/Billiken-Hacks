@@ -32,7 +32,7 @@ const Categories = () => {
               color: '#7ec242',
               transition: 'transform 0.3s',
             }}
-            onClick={() => handleCategoryClick('car-luxury-goods')}
+            onClick={() => handleCategoryClick('Car-Luxury-Goods')}
           >
             <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: '24px', marginBottom: '10px' }}>Car/Luxury Goods</h3>
              </div>
@@ -48,7 +48,7 @@ const Categories = () => {
               color: '#7ec242',
               transition: 'transform 0.3s',
             }}
-            onClick={() => handleCategoryClick('new-home-purchase')}
+            onClick={() => handleCategoryClick('New-Home-Purchase')}
           >
             <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: '24px', marginBottom: '10px' }}>New Home Purchase</h3>
             </div>
@@ -64,7 +64,7 @@ const Categories = () => {
               color: '#7ec242',
               transition: 'transform 0.3s',
             }}
-            onClick={() => handleCategoryClick('gold-investment')}
+            onClick={() => handleCategoryClick('Gold-Investment')}
           >
             <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: '24px', marginBottom: '10px' }}>Gold Investment</h3>
            </div>

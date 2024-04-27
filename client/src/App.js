@@ -2,14 +2,16 @@ import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Categories from './Categories';
 import logo from './logo.png'; // Ensure the logo image is available in the src folder
+import Form from './Form';
 
 const App = () => {
     return (
         <div>
             <Header />
             <Routes>
-                <Route path="/" element={<MainContent />} />
-                <Route path="/categories" element={<Categories />} />
+            <Route path="/" element={<MainContent />} />
+            < Route path="/Categories" element={<Categories />}  />
+            <Route path="/form/:category" element={<Form />} />
             </Routes>
         </div>
     );
