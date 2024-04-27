@@ -1,0 +1,18 @@
+
+
+.flex-item {
+    flex: 1; /* Each flex item will grow equally to fill the space */
+    margin: 10px; /* Adds margin around each flex item */
+    padding: 20px; /* Adds padding inside each flex item */
+    background-color: #fff; /* Sets a background color for each item */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow to each item */
+    border-radius: 8px; /* Rounds the corners of each item */
+}
+
+.flex-container {
+    display: flex; /* Establishes this container as a flex container */
+    justify-content: space-around; /* Distributes space around items */
+    align-items: center; /* Vertically aligns items in the middle */
+    padding: 20px; /* Adds space inside the container */
+    background-color: #f0f0f0; /* Sets a background color for the container */
+}
