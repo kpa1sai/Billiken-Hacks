@@ -1,11 +1,16 @@
 import React from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import Categories from './Categories';
 import logo from './logo.png'; // Ensure the logo image is available in the src folder
 
 const App = () => {
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const zipcode = document.getElementById('zipcode').value;
         console.log(`Submitted ZIP code: ${zipcode}`);
+        navigate('./categories'); // Navigate to categories page on form submit
     };
 
     return (
@@ -35,17 +40,21 @@ const App = () => {
                 }}>
                     <p>First, enter your ZIP code</p>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a 5-digit ZIP code" required />
-                        <button type="submit" style={{
+                            <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a 5-digit ZIP code" required />
+                            <button type="submit" style={{
                             backgroundColor: '#7ec242', color: '#fff', border: 'none', padding: '10px 20px',
                             borderRadius: '5px', cursor: 'pointer', marginTop: '10px'
-                        }} onMouseOver={(e) => e.target.style.backgroundColor = '#9b6f3d'}>Get Started</button>
+                        }}>Get Started</button>
                     </form>
                     <p>Disclosures</p>
                 </div>
             </main>
+            <Routes>
+                <Route path="/categories" element={<Categories />} />
+            </Routes>
         </div>
     );
 }
+
 
 export default App;
