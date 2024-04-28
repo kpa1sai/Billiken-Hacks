@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const UserData = require('./userData');
 
 const loanCalculationSchema = new mongoose.Schema({
   userId: {
@@ -33,6 +32,13 @@ const loanCalculationSchema = new mongoose.Schema({
           type: Number,
           default: 0
         }
+      },
+      rule: {
+        name: String,
+        suggestedLimit: Number,
+        suggestedTotalLoanLimit: Number,
+        cashAfterLoan: Number,
+        exceedsLimit: Boolean
       }
     }
   ],
