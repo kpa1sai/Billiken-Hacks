@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from './logo.png'; // Ensure the logo path is correct!
+import logo from '../images/logo.png'; // Ensure the logo path is correct!
 
 const Categories = () => {
   const navigate = useNavigate();
