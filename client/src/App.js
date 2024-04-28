@@ -7,6 +7,7 @@ import FormPage from './components/FormPage';
 import { Routes, Route } from 'react-router-dom';
 import Plan from './components/Plan';
 import SignIn from './components/SignIn';
+import Blog from './components/Blog';
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path="/categories" element={<Categories/>} />
                     <Route path="/form" element={<FormPage/>} />
                     <Route path="/plans" element={< Plan/>} />
+                    <Route path="/blog" element={< Blog/>} />
                 </Routes>
             </div>
         <Footer />

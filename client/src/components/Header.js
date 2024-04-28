@@ -11,12 +11,14 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
 //import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Products', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
+  let navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -27,8 +29,10 @@ function Header() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (page) => {
     setAnchorElNav(null);
+    console.log(page);
+    navigate(`/${page.toString().toLowerCase()}`);
   };
 
   const handleCloseUserMenu = () => {
@@ -48,7 +52,7 @@ function Header() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: 'EB Garamond',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -104,7 +108,7 @@ function Header() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'EB Garamond',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -128,7 +132,7 @@ function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Settings" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
