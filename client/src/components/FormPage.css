@@ -1,42 +1,48 @@
-.form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form {
-    display: grid;
-    grid-gap: 20px;
-  }
-  
-  .form-group {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input[type="number"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
+.container {
+   /* Set the max-width to 20% of the parent container */
+  margin: auto;   /* Center the container */
+  display: block; /* Ensure it's a block-level element to accept width and margin */
+  display: flex;
+  justify-content: center; /* Horizontally center the flex items */
+  align-items: center; /* Vertically center the flex items (if desired) */
+}
+
+
+.form {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  text-align: center;
+  width: 100%; /* Input will take the full width of the .container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 100%; /* Button will take the full width of the .container */
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}

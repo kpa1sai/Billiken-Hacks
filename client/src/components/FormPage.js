@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import './FormPage.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const FormPage = () => {
-  const { category } = useParams();
 
+
+
+
+function FormPage() {
   const [formData, setFormData] = useState({
     // Initialize form data with default values
     monthlyIncome: 0,
@@ -16,6 +17,14 @@ const FormPage = () => {
     investmentAmount: 0,
     loanAmount: 0
   });
+  let navigate = useNavigate();
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,26 +35,15 @@ const FormPage = () => {
     } catch (error) {
         console.error('Error posting data:', error);
     }
-
   };
-
-  let navigate = useNavigate();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-        ...prevState,
-        [name]: value
-    }));
-};
 
   return (
     <div>
 
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 'calc(100vh - 90px)' }}>
-        <div style={{ width: '400px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
+        <div style={{ width: '400px', padding: '25px' ,backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',           
+        overflowY: 'auto', maxHeight: '110vh', margin: '20px auto' }}>
           <h2 style={{ textAlign: 'center', fontSize: '24px', marginBottom: '20px' }}>Form Page</h2>
-          <p style={{ textAlign: 'center', marginBottom: '20px' }}>Selected Category: {category}</p>
           <form style={{ display: 'grid', gap: '20px' }} onSubmit={handleSubmit}>
             <div>
               <label htmlFor="monthlyIncome" style={{ display: 'block', marginBottom: '5px' }}>Monthly Income:</label>
@@ -80,5 +78,7 @@ const FormPage = () => {
     </div>
   );
 }
+
+
 
 export default FormPage;

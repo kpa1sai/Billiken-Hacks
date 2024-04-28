@@ -18,7 +18,8 @@ export default function MediaCard(props) {
     <Card sx={{ maxWidth: 345 }} onClick={navigateToForm}>
       <CardMedia
         sx={{ height: 140 }}
-        image = "../images/th.jpeg"
+        image = "/src/images/th.jpeg"
+        height = "10px"
         title="green iguana"
       />
       <CardContent>
@@ -26,7 +27,7 @@ export default function MediaCard(props) {
           {props.text}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Plans to save on Home Loan.
+          Plans to save on {props.text}.
         </Typography>
       </CardContent>
     </Card>

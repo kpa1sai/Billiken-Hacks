@@ -11,57 +11,6 @@ const getData = {
     "annualRate": 12,
     "userId" : 0
 };
-/*
-async function fetchData(_id, getData) {
-    try {
-      const response = await axios.post('http://localhost:5000/api/user/calculate-loans/' + _id, getData);
-      // Handle the response from the server
-      console.log(response.data);
-      return response.data;
-    } catch (error) {
-      // Handle any errors that occur during the request
-      console.error('Error fetching data: ', error);
-      // Optionally, you can rethrow the error to handle it in the calling code
-      throw error;
-    }
-}
-
-async function processData(_id, getData) {
-    try {
-      const responseData = await fetchData(_id, getData);
-      // Use the response data here or pass it to another function
-      console.log('Processed data: ', responseData);
-    } catch (error) {
-      // Handle errors if needed
-      console.error('Error processing data: ', error);
-    }
-  }
-
-
-const Plan = () => {
-    const location = useLocation();
-    const data = location.state;
-    const _id = data.data;
-    console.log(_id);
-    getData.userId = _id;
-    getData.loanAmount = data.loanAmount;
-    const responseData = processData(_id, getData);
-    console.log(responseData);
-    
-    return (
-            <>
-            
-            <div class="flex-container">
-                <div class="flex-item"> <MediaCard text="Home Loan"/> </div>
-                <div class="flex-item"> <MediaCard text="Car Loan"/> </div>
-                <div class="flex-item"> <MediaCard text="Gold Loan"/> </div>
-            </div>
-            
-            </>
-
-    );
-}
-*/
 
 const Plan = () => {
     const location = useLocation();

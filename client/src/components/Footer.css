@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #065C86;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media (min-width: 400px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
