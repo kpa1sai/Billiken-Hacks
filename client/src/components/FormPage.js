@@ -22,7 +22,7 @@ const FormPage = () => {
     try {
         const response = await axios.post('http://localhost:5000/api/user', formData);
         console.log('Server Response:', response.data);
-        navigate('/plans', {state : {data: response.data._id, loanAmount: response.data.loanAmount}});
+        navigate('/plans', {state : {_id: response.data._id, loanAmount: response.data.loanAmount}});
     } catch (error) {
         console.error('Error posting data:', error);
     }
@@ -71,7 +71,7 @@ const FormPage = () => {
               <label htmlFor="investmentAmount" style={{ display: 'block', marginBottom: '5px' }}>Investment Amount:</label>
               <input type="number" id="investmentAmount" name="investmentAmount" required style={{ width: '100%', padding: '8px' }} onChange={handleChange}/>
             </div>
-            <button onClick={handleSubmit} type="submit" style={{ backgroundColor: '#7ec242', color: 'white', padding: '10px', borderRadius: '4px', fontSize: '16px', cursor: 'pointer' }}>
+            <button  type="submit" style={{ backgroundColor: '#7ec242', color: 'white', padding: '10px', borderRadius: '4px', fontSize: '16px', cursor: 'pointer' }}>
               Submit
             </button>
           </form>

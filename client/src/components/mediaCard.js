@@ -18,7 +18,7 @@ export default function MediaCard(props) {
     <Card sx={{ maxWidth: 345 }} onClick={navigateToForm}>
       <CardMedia
         sx={{ height: 140 }}
-        image = "/src/images/th.jpeg"
+        image = "../images/th.jpeg"
         title="green iguana"
       />
       <CardContent>
